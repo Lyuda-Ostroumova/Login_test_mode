@@ -2,7 +2,7 @@ package ru.netology.test;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
-import lombok.var;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -42,7 +42,7 @@ class LoginTest {
     @Test
     @DisplayName("Should get error message if login with not registered user")
     void shouldGetErrorIfNotRegisteredUser() {
-        DataGenerator.RegistrationDto notRegisteredUser = getUser ("active");
+        DataGenerator.RegistrationDto notRegisteredUser = getUser("active");
         $("[name=login]").setValue(notRegisteredUser.getLogin());
         $("[name=password]").setValue(notRegisteredUser.getPassword());
         $(".button__text").click();
